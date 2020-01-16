@@ -8968,6 +8968,11 @@ react-number-input@^15.5.1:
     react "^0.14 || ^15.0.0-rc || ^15.0"
     react-dom "^0.14 || ^15.0.0-rc || ^15.0"
 
+react-numeric-input@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/react-numeric-input/-/react-numeric-input-2.2.3.tgz#4bf5918c3eafed851a80df1eb992d941002bb552"
+  integrity sha1-S/WRjD6v7YUagN8euZLZQQArtVI=
+
 react-overlays@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-2.1.0.tgz#3671cadab085a519c90a51b9b1402a70281e31d4"

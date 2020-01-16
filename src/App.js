@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NumberInput from 'react-number-input';
+import NumericInput from 'react-numeric-input';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,14 +15,15 @@ class App extends Component {
       suffixLen: 1,
       numberOfSentences: 10,
     }
+
+    this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onPrefixChangeHandler = this.onPrefixChangeHandler.bind(this);
   }
 
   onChangeHandler=event=>{
-    //console.log("event.target --->" + event.target);
     this.setState({
       selectedFile: event.target.files[0],
       loaded: 0,
-      prefixLen: event.target.prefixLen,
     })
   }
 
@@ -36,6 +38,27 @@ class App extends Component {
     })
   }
 
+  onPrefixChangeHandler=event=>{
+    console.log("onPrefixChangeHandler called" + event);
+    this.setState({
+      prefixLen: event,
+    })
+  }
+
+  onSuffixChangeHandler=event=>{
+    console.log("onSuffixChangeHandler called" + event);
+    this.setState({
+      suffixLen: event,
+    })
+  }
+
+  onNumberOfSentencesChangeHandler=event=>{
+    console.log("onSuffixChangeHandler called" + event);
+    this.setState({
+      numberOfSentences: event,
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -45,14 +68,14 @@ class App extends Component {
     	      <div className="row">
           	  <div className="offset-md-3 col-md-6">
                 <label>Prefix Length</label>
-                <NumberInput id="prefixLen" type="number" onChange={this.onChangeHandler} value={this.state.prefixLen} min={1} max={100} format="0" />
+                <NumericInput id="prefixLen" type="number" onChange={this.onPrefixChangeHandler} value={this.state.prefixLen} min={1} max={100} />
                 <label>Suffix Length</label>
-                <NumberInput id="suffixLen" type="number" value={this.state.suffixLen} min={1} max={10} format="0" />
+                <NumericInput id="suffixLen" type="number" onChange={this.onSuffixChangeHandler} value={this.state.suffixLen} min={1} max={10} />
                 <label>Number of Sentences</label>
-                <NumberInput id="numberOfSentences" type="number" value={this.state.numberOfSentences} min={1} max={1000} format="0" />
+                <NumericInput id="numberOfSentences" type="number" onChange={this.onNumberOfSentencesChangeHandler} value={this.state.numberOfSentences} min={1} max={1000} />
                 <div className="form-group files">
                   <label>Upload Your File </label>
-                  <input type="file" className="form-control" multiple="false" onChange={this.onChangeHandler}/>
+                  <input type="file" className="form-control" multiple={false} onChange={this.onChangeHandler}/>
                 </div>
                 <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
     	        </div>
