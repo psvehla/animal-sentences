@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import NumberInput from 'react-number-input';
 import NumericInput from 'react-numeric-input';
 import logo from './logo.svg';
 import './App.css';
@@ -33,7 +32,7 @@ class App extends Component {
     data.append('prefixLen', this.state.prefixLen);
     data.append('suffixLen', this.state.suffixLen);
     data.append('numberOfSentences', this.state.numberOfSentences);
-    axios.post("http://localhost:8080/upload", data, {}).then(res => {
+    axios.post("http://localhost:8080/api/generate", data, {}).then(res => {
       console.log(res.statusText)
     })
   }
