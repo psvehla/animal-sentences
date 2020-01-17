@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+# animal-sentences
+Front end to the sentence generator.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -67,7 +69,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-=======
-# animal-sentences
-Front end to the sentence generator.
->>>>>>> c59cbcda7cc9caa96b0e90f47e326cd7e6341db6
