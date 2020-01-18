@@ -131,6 +131,10 @@ class App extends Component {
                   }
                 }} type="number" onChange={this.onPrefixChangeHandler} value={this.state.prefixLen} min={1} max={100} />
 
+              </div>
+            </div>
+            <div className="row">
+          	  <div className="offset-md-3 col-md-6">
                 <label>Suffix Length</label>
 
                 <NumericInput id="suffixLen" style={{
@@ -139,16 +143,23 @@ class App extends Component {
                   }
                 }} type="number" onChange={this.onSuffixChangeHandler} value={this.state.suffixLen} min={1} max={10} />
 
+              </div>
+            </div>
+            <div className="row" style={{marginBottom: '35px'}}>
+          	  <div className="offset-md-3 col-md-6">
                 <label>Number of Sentences</label>
 
                 <NumericInput id="numberOfSentences" style={{
                   input: {
-                    width: 200
+                    width: 200,
                   }
                 }} type="number" onChange={this.onNumberOfSentencesChangeHandler} value={this.state.numberOfSentences} min={1} max={1000} />
-
+              </div>
+            </div>
+            <div className="row">
+              <div className="offset-md-3 col-md-6">
                 <div className="form-group files">
-                  <label>Upload Your File </label>
+                  <label id="upload-label">Upload Your File </label>
                   <input type="file" className="form-control" multiple={false} onChange={this.onChangeHandler}/>
                 </div>
                 <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
