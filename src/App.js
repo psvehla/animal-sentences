@@ -64,7 +64,7 @@ class App extends Component {
     data.append('suffixLen', this.state.suffixLen);
     data.append('numberOfSentences', this.state.numberOfSentences);
 
-    axios.post("http://localhost:8080/api/generate", data, {})
+    axios.post(process.env.REACT_APP_SENTENCE_SERVICE_ENDPOINT, data, {})
       .then(res => {
         this.setState({
           output: res.data,
