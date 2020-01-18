@@ -14,9 +14,6 @@ class App extends Component {
       numberOfSentences: 10,
       output: "Please upload some plain text.",
     }
-
-    this.onChangeHandler = this.onChangeHandler.bind(this);
-    this.onPrefixChangeHandler = this.onPrefixChangeHandler.bind(this);
   }
 
   checkMimeType=(event)=>{
@@ -35,6 +32,7 @@ class App extends Component {
   }
 
   checkFileSize=(event)=>{
+
     let file = event.target.files[0];
 
     if (file && file.size > 1048576 ) {
@@ -166,14 +164,6 @@ class App extends Component {
     	        </div>
             </div>
           </div>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
       </div>
     );

@@ -1,0 +1,458 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <h1>
+      Sentence Generator
+    </h1>
+    <p>
+      This application generates sentences based on the provided text. It uses a Markov chain algorithm, you can adjust the prefix and suffix size of the algorithm, though reasonable defaults have been chosen for you. Feel free to experiment!
+    </p>
+    <div
+      id="output"
+    >
+      Please upload some plain text.
+    </div>
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="offset-md-3 col-md-6"
+        >
+          <label>
+            Prefix Length
+          </label>
+          <span
+            className="react-numeric-input"
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            style={
+              Object {
+                "display": "inline-block",
+                "position": "relative",
+              }
+            }
+          >
+            <input
+              id="prefixLen"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onSelect={[Function]}
+              style={
+                Object {
+                  "WebkitAppearance": "none",
+                  "border": "1px solid #ccc",
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "fontSize": "inherit",
+                  "lineHeight": "normal",
+                  "paddingLeft": 4,
+                  "paddingRight": "3ex",
+                  "width": 200,
+                }
+              }
+              type="text"
+              value="5"
+            />
+            <b
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "background": "rgba(0,0,0,.1)",
+                  "borderColor": "rgba(0,0,0,.1)",
+                  "borderRadius": "2px 2px 0 0",
+                  "borderStyle": "solid",
+                  "borderWidth": "1px 1px 0 1px",
+                  "bottom": "50%",
+                  "boxShadow": "-1px -1px 3px rgba(0,0,0,.1) inset,1px 1px 3px rgba(255,255,255,.7) inset",
+                  "cursor": "default",
+                  "position": "absolute",
+                  "right": 2,
+                  "textAlign": "center",
+                  "top": 2,
+                  "transition": "all 0.1s",
+                  "width": "2.26ex",
+                }
+              }
+            >
+              <i
+                style={
+                  Object {
+                    "borderColor": "transparent transparent rgba(0, 0, 0, 0.7)",
+                    "borderStyle": "solid",
+                    "borderWidth": "0 0.6ex 0.6ex 0.6ex",
+                    "height": 0,
+                    "left": "50%",
+                    "margin": "-0.3ex 0 0 -0.56ex",
+                    "position": "absolute",
+                    "top": "50%",
+                    "width": 0,
+                  }
+                }
+              />
+            </b>
+            <b
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "background": "rgba(0,0,0,.1)",
+                  "borderColor": "rgba(0,0,0,.1)",
+                  "borderRadius": "0 0 2px 2px",
+                  "borderStyle": "solid",
+                  "borderWidth": "0 1px 1px 1px",
+                  "bottom": 2,
+                  "boxShadow": "-1px -1px 3px rgba(0,0,0,.1) inset,1px 1px 3px rgba(255,255,255,.7) inset",
+                  "cursor": "default",
+                  "position": "absolute",
+                  "right": 2,
+                  "textAlign": "center",
+                  "top": "50%",
+                  "transition": "all 0.1s",
+                  "width": "2.26ex",
+                }
+              }
+            >
+              <i
+                style={
+                  Object {
+                    "borderColor": "rgba(0, 0, 0, 0.7) transparent transparent",
+                    "borderStyle": "solid",
+                    "borderWidth": "0.6ex 0.6ex 0 0.6ex",
+                    "height": 0,
+                    "left": "50%",
+                    "margin": "-0.3ex 0 0 -0.56ex",
+                    "position": "absolute",
+                    "top": "50%",
+                    "width": 0,
+                  }
+                }
+              />
+            </b>
+          </span>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="offset-md-3 col-md-6"
+        >
+          <label>
+            Suffix Length
+          </label>
+          <span
+            className="react-numeric-input"
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            style={
+              Object {
+                "display": "inline-block",
+                "position": "relative",
+              }
+            }
+          >
+            <input
+              id="suffixLen"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onSelect={[Function]}
+              style={
+                Object {
+                  "WebkitAppearance": "none",
+                  "border": "1px solid #ccc",
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "fontSize": "inherit",
+                  "lineHeight": "normal",
+                  "paddingLeft": 4,
+                  "paddingRight": "3ex",
+                  "width": 200,
+                }
+              }
+              type="text"
+              value="1"
+            />
+            <b
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "background": "rgba(0,0,0,.1)",
+                  "borderColor": "rgba(0,0,0,.1)",
+                  "borderRadius": "2px 2px 0 0",
+                  "borderStyle": "solid",
+                  "borderWidth": "1px 1px 0 1px",
+                  "bottom": "50%",
+                  "boxShadow": "-1px -1px 3px rgba(0,0,0,.1) inset,1px 1px 3px rgba(255,255,255,.7) inset",
+                  "cursor": "default",
+                  "position": "absolute",
+                  "right": 2,
+                  "textAlign": "center",
+                  "top": 2,
+                  "transition": "all 0.1s",
+                  "width": "2.26ex",
+                }
+              }
+            >
+              <i
+                style={
+                  Object {
+                    "borderColor": "transparent transparent rgba(0, 0, 0, 0.7)",
+                    "borderStyle": "solid",
+                    "borderWidth": "0 0.6ex 0.6ex 0.6ex",
+                    "height": 0,
+                    "left": "50%",
+                    "margin": "-0.3ex 0 0 -0.56ex",
+                    "position": "absolute",
+                    "top": "50%",
+                    "width": 0,
+                  }
+                }
+              />
+            </b>
+            <b
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "background": "rgba(0,0,0,.1)",
+                  "borderColor": "rgba(0,0,0,.1)",
+                  "borderRadius": "0 0 2px 2px",
+                  "borderStyle": "solid",
+                  "borderWidth": "0 1px 1px 1px",
+                  "bottom": 2,
+                  "boxShadow": "-1px -1px 3px rgba(0,0,0,.1) inset,1px 1px 3px rgba(255,255,255,.7) inset",
+                  "cursor": "default",
+                  "position": "absolute",
+                  "right": 2,
+                  "textAlign": "center",
+                  "top": "50%",
+                  "transition": "all 0.1s",
+                  "width": "2.26ex",
+                }
+              }
+            >
+              <i
+                style={
+                  Object {
+                    "borderColor": "rgba(0, 0, 0, 0.7) transparent transparent",
+                    "borderStyle": "solid",
+                    "borderWidth": "0.6ex 0.6ex 0 0.6ex",
+                    "height": 0,
+                    "left": "50%",
+                    "margin": "-0.3ex 0 0 -0.56ex",
+                    "position": "absolute",
+                    "top": "50%",
+                    "width": 0,
+                  }
+                }
+              />
+            </b>
+          </span>
+        </div>
+      </div>
+      <div
+        className="row"
+        style={
+          Object {
+            "marginBottom": "35px",
+          }
+        }
+      >
+        <div
+          className="offset-md-3 col-md-6"
+        >
+          <label>
+            Number of Sentences
+          </label>
+          <span
+            className="react-numeric-input"
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            style={
+              Object {
+                "display": "inline-block",
+                "position": "relative",
+              }
+            }
+          >
+            <input
+              id="numberOfSentences"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onInput={[Function]}
+              onKeyDown={[Function]}
+              onSelect={[Function]}
+              style={
+                Object {
+                  "WebkitAppearance": "none",
+                  "border": "1px solid #ccc",
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "fontSize": "inherit",
+                  "lineHeight": "normal",
+                  "paddingLeft": 4,
+                  "paddingRight": "3ex",
+                  "width": 200,
+                }
+              }
+              type="text"
+              value="10"
+            />
+            <b
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "background": "rgba(0,0,0,.1)",
+                  "borderColor": "rgba(0,0,0,.1)",
+                  "borderRadius": "2px 2px 0 0",
+                  "borderStyle": "solid",
+                  "borderWidth": "1px 1px 0 1px",
+                  "bottom": "50%",
+                  "boxShadow": "-1px -1px 3px rgba(0,0,0,.1) inset,1px 1px 3px rgba(255,255,255,.7) inset",
+                  "cursor": "default",
+                  "position": "absolute",
+                  "right": 2,
+                  "textAlign": "center",
+                  "top": 2,
+                  "transition": "all 0.1s",
+                  "width": "2.26ex",
+                }
+              }
+            >
+              <i
+                style={
+                  Object {
+                    "borderColor": "transparent transparent rgba(0, 0, 0, 0.7)",
+                    "borderStyle": "solid",
+                    "borderWidth": "0 0.6ex 0.6ex 0.6ex",
+                    "height": 0,
+                    "left": "50%",
+                    "margin": "-0.3ex 0 0 -0.56ex",
+                    "position": "absolute",
+                    "top": "50%",
+                    "width": 0,
+                  }
+                }
+              />
+            </b>
+            <b
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "background": "rgba(0,0,0,.1)",
+                  "borderColor": "rgba(0,0,0,.1)",
+                  "borderRadius": "0 0 2px 2px",
+                  "borderStyle": "solid",
+                  "borderWidth": "0 1px 1px 1px",
+                  "bottom": 2,
+                  "boxShadow": "-1px -1px 3px rgba(0,0,0,.1) inset,1px 1px 3px rgba(255,255,255,.7) inset",
+                  "cursor": "default",
+                  "position": "absolute",
+                  "right": 2,
+                  "textAlign": "center",
+                  "top": "50%",
+                  "transition": "all 0.1s",
+                  "width": "2.26ex",
+                }
+              }
+            >
+              <i
+                style={
+                  Object {
+                    "borderColor": "rgba(0, 0, 0, 0.7) transparent transparent",
+                    "borderStyle": "solid",
+                    "borderWidth": "0.6ex 0.6ex 0 0.6ex",
+                    "height": 0,
+                    "left": "50%",
+                    "margin": "-0.3ex 0 0 -0.56ex",
+                    "position": "absolute",
+                    "top": "50%",
+                    "width": 0,
+                  }
+                }
+              />
+            </b>
+          </span>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="offset-md-3 col-md-6"
+        >
+          <div
+            className="form-group files"
+          >
+            <label
+              id="upload-label"
+            >
+              Upload Your File 
+            </label>
+            <input
+              className="form-control"
+              multiple={false}
+              onChange={[Function]}
+              type="file"
+            />
+          </div>
+          <button
+            className="btn btn-success btn-block"
+            onClick={[Function]}
+            type="button"
+          >
+            Upload
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
