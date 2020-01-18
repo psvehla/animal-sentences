@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 35px;
 }
 
 .App-link {
@@ -35,6 +36,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  padding: 35px;
+}
+
+#output {
+  padding: 35px;
+  color: yellow;
 }
 
 .files input {

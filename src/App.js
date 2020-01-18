@@ -19,11 +19,42 @@ class App extends Component {
     this.onPrefixChangeHandler = this.onPrefixChangeHandler.bind(this);
   }
 
+  checkMimeType=(event)=>{
+
+    let file = event.target.files[0];
+
+    if (file && file.type !== 'text/plain') {
+      this.setState({
+        output: "Only plain text files are supported.",
+      })
+
+      return false;
+    }
+
+    return true;
+  }
+
+  checkFileSize=(event)=>{
+    let file = event.target.files[0];
+
+    if (file && file.size > 1048576 ) {
+      this.setState({
+        output: "Your file is too big, please try another one.",
+      })
+
+      return false;
+    }
+
+    return true;
+  }
+
   onChangeHandler=event=>{
-    this.setState({
-      selectedFile: event.target.files[0],
-      loaded: 0,
-    })
+    if (this.checkMimeType(event) && this.checkFileSize(event)) {
+      this.setState({
+        selectedFile: event.target.files[0],
+        loaded: 0,
+      })
+    }
   }
 
   onClickHandler=()=>{
@@ -33,12 +64,30 @@ class App extends Component {
     data.append('suffixLen', this.state.suffixLen);
     data.append('numberOfSentences', this.state.numberOfSentences);
 
-    axios.post("http://localhost:8080/api/generate", data, {}).then(res => {
-      this.setState({
-        output: res.data,
+    axios.post("http://localhost:8080/api/generate", data, {})
+      .then(res => {
+        this.setState({
+          output: res.data,
+        });
+      })
+      .catch((error) => {
+        if (error.response) {
+          this.setState({
+            output: "Your file is invalid. Please upload a plain text one.",
+          })
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+        else if (error.request) {
+          console.log(error.request);
+        }
+        else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
       });
-    })
-  }
+    }
 
   onPrefixChangeHandler=event=>{
     console.log("onPrefixChangeHandler called" + event);
@@ -65,16 +114,39 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>Sentence Generator</h1>
+          <p>
+            This application generates sentences based on the provided text. It uses a Markov chain algorithm, you can adjust the prefix and suffix size of the algorithm, though reasonable
+            defaults have been chosen for you. Feel free to experiment!
+          </p>
           <div id="output">{this.state.output}</div>
           <div className="container">
     	      <div className="row">
           	  <div className="offset-md-3 col-md-6">
                 <label>Prefix Length</label>
-                <NumericInput id="prefixLen" type="number" onChange={this.onPrefixChangeHandler} value={this.state.prefixLen} min={1} max={100} />
+
+                <NumericInput id="prefixLen" style={{
+                  input: {
+                    width: 200
+                  }
+                }} type="number" onChange={this.onPrefixChangeHandler} value={this.state.prefixLen} min={1} max={100} />
+
                 <label>Suffix Length</label>
-                <NumericInput id="suffixLen" type="number" onChange={this.onSuffixChangeHandler} value={this.state.suffixLen} min={1} max={10} />
+
+                <NumericInput id="suffixLen" style={{
+                  input: {
+                    width: 200
+                  }
+                }} type="number" onChange={this.onSuffixChangeHandler} value={this.state.suffixLen} min={1} max={10} />
+
                 <label>Number of Sentences</label>
-                <NumericInput id="numberOfSentences" type="number" onChange={this.onNumberOfSentencesChangeHandler} value={this.state.numberOfSentences} min={1} max={1000} />
+
+                <NumericInput id="numberOfSentences" style={{
+                  input: {
+                    width: 200
+                  }
+                }} type="number" onChange={this.onNumberOfSentencesChangeHandler} value={this.state.numberOfSentences} min={1} max={1000} />
+
                 <div className="form-group files">
                   <label>Upload Your File </label>
                   <input type="file" className="form-control" multiple={false} onChange={this.onChangeHandler}/>
