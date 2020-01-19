@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NumericInput from 'react-numeric-input';
+import FileUpload from './FileUpload';
 import './App.css';
 
 class App extends Component {
@@ -159,11 +160,7 @@ class App extends Component {
             </div>
             <div className="row">
               <div className="offset-md-3 col-md-6">
-                <div className="form-group files">
-                  <label id="upload-label">Upload Your File </label>
-                  <input type="file" className="form-control" multiple={false} onChange={this.onChangeHandler}/>
-                </div>
-                <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
+                <FileUpload onChange={this.onChangeHandler} onClick={this.onClickHandler} />
     	        </div>
             </div>
           </div>

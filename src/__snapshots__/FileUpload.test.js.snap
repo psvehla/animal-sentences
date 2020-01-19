@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="form-group files"
+  >
+    <label
+      id="upload-label"
+    >
+      Upload Your File 
+    </label>
+    <input
+      className="form-control"
+      multiple={false}
+      type="file"
+    />
+  </div>
+  <button
+    className="btn btn-success btn-block"
+    type="button"
+  >
+    Upload
+  </button>
+</div>
+`;

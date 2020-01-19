@@ -25,7 +25,7 @@ test('test prefixLen input', () => {
 
   const component = shallow(<NumericInput onChange={changePrefixLenMock} />);
   component.find('input').simulate('change', event);
-  expect(changePrefixLenMock).toBeCalled();
+  expect(changePrefixLenMock).toHaveBeenCalledTimes(1);
 });
 
 test('test suffixLen input', () => {
@@ -40,7 +40,7 @@ test('test suffixLen input', () => {
 
   const component = shallow(<NumericInput onChange={changeSuffixLenMock} />);
   component.find('input').simulate('change', event);
-  expect(changeSuffixLenMock).toBeCalled();
+  expect(changeSuffixLenMock).toHaveBeenCalledTimes(1);
 });
 
 test('test numberOfSentences input', () => {
@@ -55,5 +55,5 @@ test('test numberOfSentences input', () => {
 
   const component = shallow(<NumericInput onChange={changeNumberOfSentencesMock} />);
   component.find('input').simulate('change', event);
-  expect(changeNumberOfSentencesMock).toBeCalled();
+  expect(changeNumberOfSentencesMock).toHaveBeenCalledTimes(1);
 });

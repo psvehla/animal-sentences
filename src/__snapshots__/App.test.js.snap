@@ -287,6 +287,17 @@ exports[`renders correctly 1`] = `
       </div>
       <div
         className="row"
+      >
+        <div
+          className="offset-md-3 col-md-6"
+        >
+          <label>
+            Number of Sentences
+          </label>
+        </div>
+      </div>
+      <div
+        className="row"
         style={
           Object {
             "marginBottom": "35px",
@@ -296,9 +307,6 @@ exports[`renders correctly 1`] = `
         <div
           className="offset-md-3 col-md-6"
         >
-          <label>
-            Number of Sentences
-          </label>
           <span
             className="react-numeric-input"
             onMouseLeave={[Function]}
@@ -428,28 +436,30 @@ exports[`renders correctly 1`] = `
         <div
           className="offset-md-3 col-md-6"
         >
-          <div
-            className="form-group files"
-          >
-            <label
-              id="upload-label"
+          <div>
+            <div
+              className="form-group files"
             >
-              Upload Your File 
-            </label>
-            <input
-              className="form-control"
-              multiple={false}
-              onChange={[Function]}
-              type="file"
-            />
+              <label
+                id="upload-label"
+              >
+                Upload Your File 
+              </label>
+              <input
+                className="form-control"
+                multiple={false}
+                onChange={[Function]}
+                type="file"
+              />
+            </div>
+            <button
+              className="btn btn-success btn-block"
+              onClick={[Function]}
+              type="button"
+            >
+              Upload
+            </button>
           </div>
-          <button
-            className="btn btn-success btn-block"
-            onClick={[Function]}
-            type="button"
-          >
-            Upload
-          </button>
         </div>
       </div>
     </div>
