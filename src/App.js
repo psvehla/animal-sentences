@@ -85,7 +85,7 @@ class App extends Component {
         }
         console.log(error.config);
       });
-    }
+  }
 
   onPrefixChangeHandler=event=>{
     console.log("onPrefixChangeHandler called" + event);
@@ -137,16 +137,19 @@ class App extends Component {
 
                 <NumericInput id="suffixLen" style={{
                   input: {
-                    width: 200
+                    width: 200,
                   }
                 }} type="number" onChange={this.onSuffixChangeHandler} value={this.state.suffixLen} min={1} max={10} />
 
               </div>
             </div>
-            <div className="row" style={{marginBottom: '35px'}}>
+            <div className="row">
           	  <div className="offset-md-3 col-md-6">
                 <label>Number of Sentences</label>
-
+              </div>
+            </div>
+            <div className="row" style={{marginBottom: '35px'}}>
+          	  <div className="offset-md-3 col-md-6">
                 <NumericInput id="numberOfSentences" style={{
                   input: {
                     width: 200,
