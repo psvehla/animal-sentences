@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NumericInput from 'react-numeric-input';
-import FileUpload from './FileUpload';
+import FileUpload from '../file-upload/FileUpload';
 import './App.css';
 
 class App extends Component {
