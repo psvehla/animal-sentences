@@ -74,36 +74,33 @@ class App extends Component {
           this.setState({
             output: "Your file is invalid. Please upload a plain text one.",
           })
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
+          console.error(error.response.data);
+          console.error(error.response.status);
+          console.error(error.response.headers);
         }
         else if (error.request) {
-          console.log(error.request);
+          console.error(error.request);
         }
         else {
-          console.log('Error', error.message);
+          console.error('Error', error.message);
         }
-        console.log(error.config);
+        console.error(error.config);
       });
   }
 
   onPrefixChangeHandler=event=>{
-    console.log("onPrefixChangeHandler called" + event);
     this.setState({
       prefixLen: event,
     })
   }
 
   onSuffixChangeHandler=event=>{
-    console.log("onSuffixChangeHandler called" + event);
     this.setState({
       suffixLen: event,
     })
   }
 
   onNumberOfSentencesChangeHandler=event=>{
-    console.log("onSuffixChangeHandler called" + event);
     this.setState({
       numberOfSentences: event,
     })
