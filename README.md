@@ -6,6 +6,7 @@ This application generates sentences based on the provided text. It uses a Marko
 Requires:
 * yarn
 * [Back end](https://github.com/psvehla/sentence) installed and running.
+* Port 3000
 
 To run:
 
