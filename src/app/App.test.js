@@ -15,7 +15,7 @@ it('renders correctly', () => {
 
 test('test prefixLen input', () => {
 
-  const TEST_VALUE = 10
+  const TEST_VALUE = 10;
   const changePrefixLenMock = jest.fn();
 
   const event = {
@@ -30,7 +30,7 @@ test('test prefixLen input', () => {
 
 test('test suffixLen input', () => {
 
-  const TEST_VALUE = 10
+  const TEST_VALUE = 2;
   const changeSuffixLenMock = jest.fn();
 
   const event = {
@@ -45,7 +45,7 @@ test('test suffixLen input', () => {
 
 test('test numberOfSentences input', () => {
 
-  const TEST_VALUE = 10
+  const TEST_VALUE = 100;
   const changeNumberOfSentencesMock = jest.fn();
 
   const event = {

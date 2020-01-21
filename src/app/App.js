@@ -9,12 +9,30 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedFile: null,
       prefixLen: 5,
       suffixLen: 1,
       numberOfSentences: 10,
+      selectedFile: null,
       output: "Please upload some plain text.",
     }
+  }
+
+  onPrefixChangeHandler=event=>{
+    this.setState({
+      prefixLen: event,
+    })
+  }
+
+  onSuffixChangeHandler=event=>{
+    this.setState({
+      suffixLen: event,
+    })
+  }
+
+  onNumberOfSentencesChangeHandler=event=>{
+    this.setState({
+      numberOfSentences: event,
+    })
   }
 
   checkMimeType=(event)=>{
@@ -36,9 +54,10 @@ class App extends Component {
 
     let file = event.target.files[0];
 
-    if (file && file.size > 1048576 ) {
+    if (file && file.size > parseInt(process.env.REACT_APP_MAX_INPUT_FILE_SIZE)) {
       this.setState({
         output: "Your file is too big, please try another one.",
+        selectedFile: null,
       })
 
       return false;
@@ -57,53 +76,44 @@ class App extends Component {
   }
 
   onClickHandler=()=>{
-    const data = new FormData();
-    data.append('file', this.state.selectedFile);
-    data.append('prefixLen', this.state.prefixLen);
-    data.append('suffixLen', this.state.suffixLen);
-    data.append('numberOfSentences', this.state.numberOfSentences);
+    if (this.state.selectedFile != null) {
 
-    axios.post(process.env.REACT_APP_SENTENCE_SERVICE_ENDPOINT, data, {})
-      .then(res => {
-        this.setState({
-          output: res.data,
-        });
-      })
-      .catch((error) => {
-        if (error.response) {
+      const data = new FormData();
+      data.append('prefixLen', this.state.prefixLen);
+      data.append('suffixLen', this.state.suffixLen);
+      data.append('numberOfSentences', this.state.numberOfSentences);
+      data.append('file', this.state.selectedFile);
+
+      axios.post(process.env.REACT_APP_SENTENCE_SERVICE_ENDPOINT, data, {})
+        .then(res => {
           this.setState({
-            output: "Your file is invalid. Please upload a plain text one.",
-          })
-          console.error(error.response.data);
-          console.error(error.response.status);
-          console.error(error.response.headers);
-        }
-        else if (error.request) {
-          console.error(error.request);
-        }
-        else {
-          console.error('Error', error.message);
-        }
-        console.error(error.config);
+            output: res.data,
+          });
+        })
+        .catch((error) => {
+          if (error.response) {
+            this.setState({
+              output: "Your file is invalid. Please upload a plain text one.",
+            });
+
+            console.error(error.response.data);
+            console.error(error.response.status);
+            console.error(error.response.headers);
+          }
+          else if (error.request) {
+            console.error(error.request);
+          }
+          else {
+            console.error('Error', error.message);
+          }
+          console.error(error.config);
+        });
+    }
+    else {
+      this.setState({
+        output: "Please select a plain text file.",
       });
-  }
-
-  onPrefixChangeHandler=event=>{
-    this.setState({
-      prefixLen: event,
-    })
-  }
-
-  onSuffixChangeHandler=event=>{
-    this.setState({
-      suffixLen: event,
-    })
-  }
-
-  onNumberOfSentencesChangeHandler=event=>{
-    this.setState({
-      numberOfSentences: event,
-    })
+    }
   }
 
   render() {
@@ -123,7 +133,7 @@ class App extends Component {
 
                 <NumericInput id="prefixLen" style={{
                   input: {
-                    width: 200
+                    width: 200,
                   }
                 }} type="number" onChange={this.onPrefixChangeHandler} value={this.state.prefixLen} min={1} max={100} />
 

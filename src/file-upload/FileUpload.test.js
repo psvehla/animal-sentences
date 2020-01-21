@@ -12,27 +12,27 @@ it('renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('check the onChange event', () => {
+test('check the onChange event', () => {
 
     const onChange = jest.fn(),
         props = {
             value: 10,
             onChange
         },
-        tree = mount(<FileUpload {...props} />).find('input');
+        component = mount(<FileUpload {...props} />).find('input');
 
-    tree.simulate('change', { target: {value: 20} });
+    component.simulate('change', { target: {value: 20} });
     expect(onChange).toHaveBeenCalledTimes(1);
 });
 
-it('check the onClick event', () => {
+test('check the onClick event', () => {
 
     const onClick = jest.fn(),
         props = {
             onClick
         },
-        tree = mount(<FileUpload {...props} />).find('button');
+        component = mount(<FileUpload {...props} />).find('button');
 
-    tree.simulate('click');
+    component.simulate('click');
     expect(onClick).toHaveBeenCalledTimes(1);
 });
