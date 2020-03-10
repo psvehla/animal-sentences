@@ -75,7 +75,7 @@ class App extends Component {
     }
   }
 
-  onClickHandler=()=>{
+  onClickHandler = async () => {
     if (this.state.selectedFile != null) {
 
       const data = new FormData();
@@ -84,30 +84,31 @@ class App extends Component {
       data.append('numberOfSentences', this.state.numberOfSentences);
       data.append('file', this.state.selectedFile);
 
-      axios.post(process.env.REACT_APP_SENTENCE_SERVICE_ENDPOINT, data, {})
-        .then(res => {
-          this.setState({
-            output: res.data,
-          });
-        })
-        .catch((error) => {
-          if (error.response) {
-            this.setState({
-              output: "Your file is invalid. Please upload a plain text one.",
-            });
+      try {
+        let res = await axios.post(process.env.REACT_APP_SENTENCE_SERVICE_ENDPOINT, data);
 
-            console.error(error.response.data);
-            console.error(error.response.status);
-            console.error(error.response.headers);
-          }
-          else if (error.request) {
-            console.error(error.request);
-          }
-          else {
-            console.error('Error', error.message);
-          }
-          console.error(error.config);
+        this.setState({
+          output: res.data,
         });
+      }
+      catch (error) {
+        if (error.response) {
+          this.setState({
+            output: "Your file is invalid. Please upload a plain text one.",
+          });
+
+          console.error(error.response.data);
+          console.error(error.response.status);
+          console.error(error.response.headers);
+        }
+        else if (error.request) {
+          console.error(error.request);
+        }
+        else {
+          console.error('Error', error.message);
+        }
+        console.error(error.config);
+      }
     }
     else {
       this.setState({
