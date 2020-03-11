@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 import './FileUpload.css';
 
 class FileUpload extends Component {
@@ -16,7 +17,7 @@ class FileUpload extends Component {
           <label id="upload-label">Upload Your File </label>
           <input type="file" className="form-control" multiple={false} onChange={this.props.onChange}/>
         </div>
-        <button type="button" className="btn btn-success btn-block" onClick={this.props.onClick}>Upload</button>
+        <Button type="button" variant="primary" className="btn btn-success btn-block" onClick={this.props.onClick}>Upload</Button>
       </div>
     );
   }
