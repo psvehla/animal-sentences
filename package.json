@@ -10,7 +10,7 @@
     "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/react-numeric-input": "^2.2.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "enzyme-adapter-react-16": "^1.15.2",
     "filepond": "^4.9.4",
